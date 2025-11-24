@@ -10,7 +10,7 @@ app.use(express.json());
 
 
 app.get('/',(req,res)=>{
-  req.send("candiate appi ");
+  res.send("candiate appi ");
 })
 const PORT = process.env.PORT || 5000;
 app.listen(PORT,()=>{
