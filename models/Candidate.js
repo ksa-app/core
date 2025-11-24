@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-const visaSchema = new mongoose.Schema({
+const candidateSchema = new mongoose.Schema({
     sl:{type:Number,required:true,unique:true,index:true},
     fullName:{type:String,required:true,trim:true,index:true},
     passportNumber:{type:String,required:true,unique:true,index:true},
@@ -9,4 +9,5 @@ const visaSchema = new mongoose.Schema({
     passportScanCopy:{type:String,unique:true},
 },{timestamps:true});
 
-export default mongoose.model("Visa", visaSchema);
+
+export default mongoose.model("Candidate",candidateSchema);
