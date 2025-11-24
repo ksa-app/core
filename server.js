@@ -23,7 +23,7 @@ app.post("/candidates", (req, res) => {
 
 // Root path
 app.get("/", (req, res) => {
-  res.send("Simple Candidate API Running!");
+  res.send("this is reaz website for practice");
 });
 
 const port = process.env.PORT || 3000;
