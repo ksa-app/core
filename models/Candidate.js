@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 const candidateSchema = new mongoose.Schema({
-    sl:{type:Number,required:true,unique:true,index:true},
+    sl:{type:Number,required:true,unique:true,index:true,trim:true},
     fullName:{type:String,required:true,trim:true,index:true},
     passportNumber:{type:String,required:true,unique:true,index:true},
     receivedDate:{type:Date,default:""},
