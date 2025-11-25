@@ -13,7 +13,7 @@ app.use(cors());
 app.use(express.json());
 
 //Routes
-app.use("/api/canidates",router);
+app.use("/api/candidates",router);
 
 //TEST Routes
 app.get('/',(req,res)=>{
