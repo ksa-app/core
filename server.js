@@ -17,7 +17,7 @@ app.use("/api/canidates",router);
 
 //TEST Routes
 app.get('/',(req,res)=>{
-  res.send("candiate appi ");
+  res.send("KSA 2025 ");
 })
 
 //Start Server
