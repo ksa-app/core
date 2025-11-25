@@ -4,6 +4,7 @@ const candidateSchema = new mongoose.Schema({
     fullName:{type:String,required:true,trim:true,index:true},
     passportNumber:{type:String,required:true,unique:true,index:true},
     receivedDate:{type:Date,default:""},
+    agentName:{type:String},
     status:{type:String,enum:["JUST RECIEVED","MEDICAL","MOFA","VISA ISSUED","MANPOWER","FLIGHT","IQAMA","ON HOLD","BACK"],default:"JUST RECIEVED"},
     isDeleted:{type:Boolean,default:false},
     passportScanCopy:{type:String,unique:true},
