@@ -12,7 +12,7 @@ router.post("/", async(req,res)=>{
     }
 });
 router.get("/",async(req,res)=>{
-    const visas = await Visa.find();
+    const visas = await Visa.find().populate('Candidate');
     res.json(visas);
 });
 export default router;
