@@ -6,7 +6,8 @@ const visaSchema = new mongoose.Schema({
     status:{type:String, enum:["ISSUDE","SOLD","EXPIRED","CANCEL"],default:"ISSUDE"},
     visaCopy:{type:String},
     visaType:{type:String},
-    visaFrom:{type:String}
+    visaFrom:{type:String},
+    isManpower:{type:Boolean,default:false}
 },{timestamps:true});
 
 
