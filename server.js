@@ -18,7 +18,7 @@ app.use("/api/candidates",router);
 app.use("/api/visas",visaRoutes);
 //TEST Routes
 app.get('/',(req,res)=>{
-  res.send("KSA 2025 12012");
+  res.send("visa fixed");
 })
 
 //Start Server
