@@ -8,9 +8,6 @@ const candidateSchema = new mongoose.Schema({
     status:{type:String,enum:["JUST RECIEVED","MEDICAL","MOFA","VISA ISSUED","MANPOWER","FLIGHT","IQAMA","ON HOLD","BACK"],default:"JUST RECIEVED"},
     isDeleted:{type:Boolean,default:false},
     passportScanCopy:{type:String,unique:true},
-
-    //visa
-    visaId:{type:mongoose.Schema.Types.ObjectId, ref:"Visa",default:null}
 },{timestamps:true});
 
 

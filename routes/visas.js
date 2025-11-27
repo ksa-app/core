@@ -1,6 +1,6 @@
 import express from 'express';
 import Visa from '../models/Visa.js';
-import Candidate from '../models/Candidate.js';
+
 const router = express.Router();
 
 // CREATE VISA
@@ -21,9 +21,14 @@ router.post("/", async (req, res) => {
         });
 
         res.json(visa);
+<<<<<<< HEAD
 
     } catch (error) {
         res.status(400).json({ message: error.message });
+=======
+    }catch(error){
+        res.status(400).json({messege:error.messege});
+>>>>>>> parent of 9737fb7 (ok)
     }
 });
 
