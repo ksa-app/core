@@ -3,22 +3,34 @@ import Visa from '../models/Visa.js';
 import Candidate from '../models/Candidate.js';
 const router = express.Router();
 
-router.post("/", async(req,res)=>{
-    try{
-        const visa = await Visa.create(req.body);
+// CREATE VISA
+router.post("/", async (req, res) => {
+    try {
+        // Insert only candidate ID + dates
+        const visa = await Visa.create({
+            candidate: req.body.candidate,
+            issueDate: req.body.issueDate,
+            expiryDate: req.body.expiryDate,
+            status: req.body.status
+        });
+
+        // Update candidate status
+        await Candidate.findByIdAndUpdate(req.body.candidate, {
+            status: "VISA ISSUED",
+            visaId: visa._id
+        });
+
         res.json(visa);
-        await Candidate.findByIdAndUpdate(
-            req.body.candidate,{
-                status:"VISA ISSUED",
-                visaId:visa._id
-            }
-        );
-    }catch(error){
-        res.status(400).json({messege:error.messege});
+
+    } catch (error) {
+        res.status(400).json({ message: error.message });
     }
 });
-router.get("/",async(req,res)=>{
+
+// GET ALL VISAS
+router.get("/", async (req, res) => {
     const visas = await Visa.find().populate("candidate");
     res.json(visas);
 });
+
 export default router;
